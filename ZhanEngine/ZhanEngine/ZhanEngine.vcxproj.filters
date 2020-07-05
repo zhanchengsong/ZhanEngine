@@ -16,11 +16,19 @@
     <ClInclude Include="src\Zhan\Core.h">
       <Filter>src\Zhan</Filter>
     </ClInclude>
-    <ClInclude Include="src\Zhan\Application.h" />
     <ClInclude Include="src\Zhan.h" />
-    <ClInclude Include="src\Zhan\Entrypoint.h" />
+    <ClInclude Include="src\Zhan\Application.h">
+      <Filter>src\Zhan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zhan\Entrypoint.h">
+      <Filter>src\Zhan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zhan\Log.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Zhan\Application.cpp" />
+    <ClCompile Include="src\Zhan\Application.cpp">
+      <Filter>src\Zhan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Zhan\Log.cpp" />
   </ItemGroup>
 </Project>

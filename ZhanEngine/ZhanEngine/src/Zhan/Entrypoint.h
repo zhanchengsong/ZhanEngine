@@ -4,6 +4,9 @@
 extern Zhan::Application* Zhan::CreateApplication();
 
 int main(int argc, char** argv) {
+
+	Zhan::Log::Init();
+
 	auto app = Zhan::CreateApplication();
 	app->Run();
 	delete app;

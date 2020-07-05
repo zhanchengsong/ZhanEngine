@@ -15,9 +15,11 @@
     <ClInclude Include="src\Zhan\Application.h" />
     <ClInclude Include="src\Zhan\Core.h" />
     <ClInclude Include="src\Zhan\Entrypoint.h" />
+    <ClInclude Include="src\Zhan\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Zhan\Application.cpp" />
+    <ClCompile Include="src\Zhan\Log.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -66,6 +68,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>ZH_PLATFORM_WINDOWS;ZH_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)ZhanEngine/vendor/spdlog/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
