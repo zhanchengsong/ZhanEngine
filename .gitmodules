@@ -1,0 +1,3 @@
+[submodule "ZhanEngine/ZhanEngine/vendor/spdlog"]
+	path = ZhanEngine/ZhanEngine/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
