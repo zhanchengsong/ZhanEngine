@@ -8,7 +8,7 @@ workspace "ZhanEngine"
 		"Dist"
 	}
 
-outputdir = "%{cfg.build}-%{cfg.system}-%{cfg.architecture}"
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 project "ZhanEngine"
 	location "ZhanEngine"
 	kind "SharedLib"
@@ -18,11 +18,11 @@ project "ZhanEngine"
 
 	files {
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.h"
+		"%{prj.name}/src/**.cpp"
 	}
 	 
 	includedirs {
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.location}/vendor/spdlog/include"
 	}
 
 	filter "system:windows" 
@@ -59,10 +59,11 @@ project "Sandbox"
 
 	files {
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.h"
+		"%{prj.name}/src/**.cpp"
 	}
 	 
 	includedirs {
+		"ZhanEngine/vendor/spdlog/include",
 		"ZhanEngine/src"
 	}
 
@@ -74,10 +75,7 @@ project "Sandbox"
 		staticruntime "On"
 		systemversion "latest"
 		defines {
-			"ZH_PLATFORM_WINDOWS",
-			"ZH_BUILD_DLL"
+			"ZH_PLATFORM_WINDOWS"
 		}
 
-		postbuildcommands {
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-		}
+		

@@ -16,12 +16,12 @@ namespace Zhan {
 	};
 }
  
-#define ZH_CORE_ERROR(...)	 ::Zhan::Log::GetCoreLogger() -> error(__VA_ARGS__) 
-#define ZH_CORE_WARN(...)	 ::Zhan::Log::GetCoreLogger() -> warn(__VA_ARGS__) 
-#define ZH_CORE_INFO(...)	 ::Zhan::Log::GetCoreLogger() -> info(__VA_ARGS__) 
-#define ZH_CORE_TRACE(...)	 ::Zhan::Log::GetCoreLogger() -> trace(__VA_ARGS__) 
+#define ZH_CORE_ERROR(...)	 ::Zhan::Log::GetCoreLogger()->error(__VA_ARGS__) 
+#define ZH_CORE_WARN(...)	 ::Zhan::Log::GetCoreLogger()->warn(__VA_ARGS__) 
+#define ZH_CORE_INFO(...)	 ::Zhan::Log::GetCoreLogger()->info(__VA_ARGS__) 
+#define ZH_CORE_TRACE(...)	 ::Zhan::Log::GetCoreLogger()->trace(__VA_ARGS__) 
 
-#define ZH_CLIENT_ERROR(...)	 ::Zhan::Log::GetClientLogger() -> error(__VA_ARGS__) 
-#define ZH_CLIENT_WARN(...)		 ::Zhan::Log::GetClientLogger() -> warn(__VA_ARGS__) 
-#define ZH_CLIENT_INFO(...)	     ::Zhan::Log::GetClientLogger() -> info(__VA_ARGS__) 
-#define ZH_CLIENT_TRACE(...)	 ::Zhan::Log::GetClientLogger() -> trace(__VA_ARGS__)
+#define ZH_CLIENT_ERROR(...)	 ::Zhan::Log::GetClientLogger()->error(__VA_ARGS__) 
+#define ZH_CLIENT_WARN(...)		 ::Zhan::Log::GetClientLogger()->warn(__VA_ARGS__) 
+#define ZH_CLIENT_INFO(...)	     ::Zhan::Log::GetClientLogger()->info(__VA_ARGS__) 
+#define ZH_CLIENT_TRACE(...)	 ::Zhan::Log::GetClientLogger()->trace(__VA_ARGS__)
