@@ -4,6 +4,9 @@
     <Filter Include="Zhan">
       <UniqueIdentifier>{F630907C-E267-910D-8B54-7710776A0D0F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Zhan\Event">
+      <UniqueIdentifier>{C71230FF-B3CA-714C-1CD2-4AA808A90C3D}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Zhan.h" />
@@ -16,8 +19,22 @@
     <ClInclude Include="src\Zhan\Entrypoint.h">
       <Filter>Zhan</Filter>
     </ClInclude>
+    <ClInclude Include="src\Zhan\Event\Event.h">
+      <Filter>Zhan\Event</Filter>
+    </ClInclude>
     <ClInclude Include="src\Zhan\Log.h">
       <Filter>Zhan</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Zhan\Application.cpp">
+      <Filter>Zhan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Zhan\Event\Event.cpp">
+      <Filter>Zhan\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Zhan\Log.cpp">
+      <Filter>Zhan</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

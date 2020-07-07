@@ -55,22 +55,22 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\bin\-windows-x86_64\ZhanEngine\</OutDir>
-    <IntDir>..\bin-int\-windows-x86_64\ZhanEngine\Debug\</IntDir>
+    <OutDir>..\bin\Debug-windows-x86_64\ZhanEngine\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\ZhanEngine\</IntDir>
     <TargetName>ZhanEngine</TargetName>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\bin\-windows-x86_64\ZhanEngine\</OutDir>
-    <IntDir>..\bin-int\-windows-x86_64\ZhanEngine\Release\</IntDir>
+    <OutDir>..\bin\Release-windows-x86_64\ZhanEngine\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86_64\ZhanEngine\</IntDir>
     <TargetName>ZhanEngine</TargetName>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\bin\-windows-x86_64\ZhanEngine\</OutDir>
-    <IntDir>..\bin-int\-windows-x86_64\ZhanEngine\Dist\</IntDir>
+    <OutDir>..\bin\Dist-windows-x86_64\ZhanEngine\</OutDir>
+    <IntDir>..\bin-int\Dist-windows-x86_64\ZhanEngine\</IntDir>
     <TargetName>ZhanEngine</TargetName>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
@@ -88,10 +88,10 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>..\bin\-windows-x86_64\ZhanEngine\ZhanEngine.lib</ImportLibrary>
+      <ImportLibrary>..\bin\Debug-windows-x86_64\ZhanEngine\ZhanEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\-windows-x86_64\ZhanEngine\ZhanEngine.dll\ (xcopy /Q /E /Y /I ..\bin\-windows-x86_64\ZhanEngine\ZhanEngine.dll ..\bin\-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\-windows-x86_64\ZhanEngine\ZhanEngine.dll ..\bin\-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\ZhanEngine\ZhanEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\ZhanEngine\ZhanEngine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\ZhanEngine\ZhanEngine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -112,10 +112,10 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ImportLibrary>..\bin\-windows-x86_64\ZhanEngine\ZhanEngine.lib</ImportLibrary>
+      <ImportLibrary>..\bin\Release-windows-x86_64\ZhanEngine\ZhanEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\-windows-x86_64\ZhanEngine\ZhanEngine.dll\ (xcopy /Q /E /Y /I ..\bin\-windows-x86_64\ZhanEngine\ZhanEngine.dll ..\bin\-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\-windows-x86_64\ZhanEngine\ZhanEngine.dll ..\bin\-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\ZhanEngine\ZhanEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\ZhanEngine\ZhanEngine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\ZhanEngine\ZhanEngine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -136,10 +136,10 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ImportLibrary>..\bin\-windows-x86_64\ZhanEngine\ZhanEngine.lib</ImportLibrary>
+      <ImportLibrary>..\bin\Dist-windows-x86_64\ZhanEngine\ZhanEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\-windows-x86_64\ZhanEngine\ZhanEngine.dll\ (xcopy /Q /E /Y /I ..\bin\-windows-x86_64\ZhanEngine\ZhanEngine.dll ..\bin\-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\-windows-x86_64\ZhanEngine\ZhanEngine.dll ..\bin\-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\ZhanEngine\ZhanEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\ZhanEngine\ZhanEngine.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\ZhanEngine\ZhanEngine.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -147,7 +147,13 @@
     <ClInclude Include="src\Zhan\Application.h" />
     <ClInclude Include="src\Zhan\Core.h" />
     <ClInclude Include="src\Zhan\Entrypoint.h" />
+    <ClInclude Include="src\Zhan\Event\Event.h" />
     <ClInclude Include="src\Zhan\Log.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Zhan\Application.cpp" />
+    <ClCompile Include="src\Zhan\Event\Event.cpp" />
+    <ClCompile Include="src\Zhan\Log.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
