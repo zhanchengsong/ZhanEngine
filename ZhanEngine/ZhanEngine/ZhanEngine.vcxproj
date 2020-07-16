@@ -143,16 +143,18 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Event.h" />
     <ClInclude Include="src\Zhan.h" />
     <ClInclude Include="src\Zhan\Application.h" />
     <ClInclude Include="src\Zhan\Core.h" />
     <ClInclude Include="src\Zhan\Entrypoint.h" />
     <ClInclude Include="src\Zhan\Event\Event.h" />
+    <ClInclude Include="src\Zhan\Event\KeyEvent.h" />
+    <ClInclude Include="src\Zhan\Event\MouseEvent.h" />
     <ClInclude Include="src\Zhan\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Zhan\Application.cpp" />
-    <ClCompile Include="src\Zhan\Event\Event.cpp" />
     <ClCompile Include="src\Zhan\Log.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

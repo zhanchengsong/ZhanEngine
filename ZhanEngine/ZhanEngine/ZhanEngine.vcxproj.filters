@@ -25,16 +25,15 @@
     <ClInclude Include="src\Zhan\Log.h">
       <Filter>Zhan</Filter>
     </ClInclude>
+    <ClInclude Include="Event.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Zhan\Application.cpp">
       <Filter>Zhan</Filter>
     </ClCompile>
-    <ClCompile Include="src\Zhan\Event\Event.cpp">
-      <Filter>Zhan\Event</Filter>
-    </ClCompile>
     <ClCompile Include="src\Zhan\Log.cpp">
       <Filter>Zhan</Filter>
     </ClCompile>
+    <ClCompile Include="src\Zhan\Event\Event.cpp" />
   </ItemGroup>
 </Project>
