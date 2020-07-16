@@ -1,5 +1,5 @@
 #pragma once
-#include "../Core.h"
+#include "Zhan/Core.h"
 #include <string>
 #include <functional>
 
@@ -21,7 +21,8 @@ namespace Zhan {
 		EventCategoryInput		    = BIT(1),
 		EventCategoryKeyboard		= BIT(2),
 		EventCategoryMouse			= BIT(3),
-		EventCategoryMouseButton    = BIT(4)
+		EventCategoryMouseButton    = BIT(4),
+		EventCategoryWindow         = BIT(5)
 		
 	};
 // This is a macro to generate repetitive body methods 

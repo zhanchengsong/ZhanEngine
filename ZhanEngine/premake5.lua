@@ -22,7 +22,8 @@ project "ZhanEngine"
 	}
 	 
 	includedirs {
-		"%{prj.location}/vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include"
 	}
 
 	filter "system:windows" 
