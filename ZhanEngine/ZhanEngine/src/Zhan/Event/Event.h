@@ -1,7 +1,5 @@
 #pragma once
 #include "Zhan/Core.h"
-#include <string>
-#include <functional>
 
 namespace Zhan {
 	// Use enum class whenever possible to ensure type safety and able to reuse varaible name 

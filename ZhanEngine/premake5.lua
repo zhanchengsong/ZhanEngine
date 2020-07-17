@@ -16,6 +16,11 @@ project "ZhanEngine"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}" )
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
+		
+	pchheader "zhpch.h"
+	pchsource "ZhanEngine/src/zhpch.cpp"
+
+
 	files {
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"

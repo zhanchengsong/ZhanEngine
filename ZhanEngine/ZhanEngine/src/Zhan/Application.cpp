@@ -1,4 +1,6 @@
+#include "zhpch.h"
 #include "Application.h"
+
 namespace Zhan {
 	Application::Application() {
 	}

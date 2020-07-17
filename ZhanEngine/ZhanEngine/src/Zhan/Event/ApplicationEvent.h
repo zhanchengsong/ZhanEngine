@@ -1,6 +1,5 @@
 #pragma once
-#include "Event.h";
-#include <sstream>;
+#include "Event.h"
 
 namespace Zhan {
 	class ZHAN_API AppTickEvent : public Event {

@@ -1,7 +1,5 @@
 #pragma once
-#include "Event.h";
-#include <sstream>;
-
+#include "Event.h"
 namespace Zhan {
 	// KeyEvent inherites from general Event 
 	class ZHAN_API KeyEvent : public Event {
