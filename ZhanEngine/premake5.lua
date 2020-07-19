@@ -9,6 +9,11 @@ workspace "ZhanEngine"
 	}
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+IncludeDir = {}
+IncludeDir["GLFW"]="ZhanEngine/vendor/GLFW/include"
+-- include premake file from GLFW -- 
+include "ZhanEngine/vendor/GLFW"
 project "ZhanEngine"
 	location "ZhanEngine"
 	kind "SharedLib"
@@ -28,7 +33,14 @@ project "ZhanEngine"
 	 
 	includedirs {
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+
+	}
+
+	links {
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows" 
@@ -37,7 +49,8 @@ project "ZhanEngine"
 		systemversion "latest"
 		defines {
 			"ZH_PLATFORM_WINDOWS",
-			"ZH_BUILD_DLL"
+			"ZH_BUILD_DLL",
+			"ZH_ENABLE_ASSERT"
 		}
 
 		postbuildcommands {
