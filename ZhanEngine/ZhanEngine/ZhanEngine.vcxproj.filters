@@ -13,6 +13,9 @@
     <Filter Include="Zhan\Event">
       <UniqueIdentifier>{C71230FF-B3CA-714C-1CD2-4AA808A90C3D}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Zhan\Layer">
+      <UniqueIdentifier>{428EA3FF-2E46-E54C-974D-BEA88324803D}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
@@ -43,6 +46,12 @@
     <ClInclude Include="src\Zhan\Event\WindowEvent.h">
       <Filter>Zhan\Event</Filter>
     </ClInclude>
+    <ClInclude Include="src\Zhan\Layer\Layer.h">
+      <Filter>Zhan\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zhan\Layer\LayerStack.h">
+      <Filter>Zhan\Layer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Zhan\Log.h">
       <Filter>Zhan</Filter>
     </ClInclude>
@@ -57,6 +66,12 @@
     </ClCompile>
     <ClCompile Include="src\Zhan\Application.cpp">
       <Filter>Zhan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Zhan\Layer\Layer.cpp">
+      <Filter>Zhan\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Zhan\Layer\LayerStack.cpp">
+      <Filter>Zhan\Layer</Filter>
     </ClCompile>
     <ClCompile Include="src\Zhan\Log.cpp">
       <Filter>Zhan</Filter>

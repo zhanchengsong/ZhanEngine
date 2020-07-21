@@ -56,9 +56,9 @@ namespace Zhan {
 
 		template<typename T> // We can make function a deducible type later 
 		bool Dispatch(EventFn<T> func) { // We did not check if T extends Event class, may be a problem later 
-			if (m_Event.GetEventType == T::GetStaticType()) {
+			if (m_Event.GetEventType() == T::GetStaticType()) {
 				// Check if the Dispatcher<T> can dispatch Event 
-				m_Event.m_Handled = func(static_cast<T&> m_Event); // We used static cast to cast Event to its derived class reference because base has virtual functions
+				m_Event.m_Handled = func(static_cast<T&> (m_Event)); // We used static cast to cast Event to its derived class reference because base has virtual functions
 				return true;
 			}
 			return false;

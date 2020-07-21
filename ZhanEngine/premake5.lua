@@ -59,14 +59,17 @@ project "ZhanEngine"
 
 	filter "configurations:Debug"
 		defines "ZH_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ZH_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ZH_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -96,5 +99,18 @@ project "Sandbox"
 		defines {
 			"ZH_PLATFORM_WINDOWS"
 		}
+	filter "configurations:Debug"
+		defines "ZH_DEBUG"
+		buildoptions "/MDd"
+		symbols "On"
 
+	filter "configurations:Release"
+		defines "ZH_RELEASE"
+		buildoptions "/MD"
+		optimize "On"
+
+	filter "configurations:Dist"
+		defines "ZH_DIST"
+		buildoptions "/MD"
+		optimize "On"
 		

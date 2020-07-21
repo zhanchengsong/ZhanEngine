@@ -84,6 +84,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -109,6 +110,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -135,6 +137,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -159,6 +162,8 @@
     <ClInclude Include="src\Zhan\Event\KeyEvent.h" />
     <ClInclude Include="src\Zhan\Event\MouseEvent.h" />
     <ClInclude Include="src\Zhan\Event\WindowEvent.h" />
+    <ClInclude Include="src\Zhan\Layer\Layer.h" />
+    <ClInclude Include="src\Zhan\Layer\LayerStack.h" />
     <ClInclude Include="src\Zhan\Log.h" />
     <ClInclude Include="src\Zhan\Window.h" />
     <ClInclude Include="src\zhpch.h" />
@@ -166,6 +171,8 @@
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Zhan\Application.cpp" />
+    <ClCompile Include="src\Zhan\Layer\Layer.cpp" />
+    <ClCompile Include="src\Zhan\Layer\LayerStack.cpp" />
     <ClCompile Include="src\Zhan\Log.cpp" />
     <ClCompile Include="src\zhpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

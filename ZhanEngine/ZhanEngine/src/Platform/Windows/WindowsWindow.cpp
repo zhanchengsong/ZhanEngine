@@ -7,6 +7,10 @@
 namespace Zhan {
 	static bool s_GLFWInitialized = false;
 
+	static void GLFWErrorCallback(int code, const char* description)
+	{
+		ZH_CORE_ERROR("Error ({0}):{1}", code, description);
+	}
 	Window* Window::Create(const WindowProps& props) {
 		return new WindowsWindow(props);
 	}
@@ -35,6 +39,7 @@ namespace Zhan {
 		SetVSync(true);
 
 		// Set GLFW callbacks 
+		glfwSetErrorCallback(GLFWErrorCallback);
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
 		{		
 				// data is the data we set for the event to carry 
