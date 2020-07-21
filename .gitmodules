@@ -1,3 +1,6 @@
 [submodule "ZhanEngine/ZhanEngine/vendor/spdlog"]
 	path = ZhanEngine/ZhanEngine/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "ZhanEngine/ZhanEngine/vendor/GLFW"]
+	path = ZhanEngine/ZhanEngine/vendor/GLFW
+	url = https://github.com/TheCherno/glfw.git

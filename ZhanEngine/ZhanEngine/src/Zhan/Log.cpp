@@ -1,4 +1,6 @@
+#include "zhpch.h"
 #include "Log.h"
+
 namespace Zhan {
 	std::shared_ptr < spdlog::logger > Log::s_CoreLogger;
 	std::shared_ptr < spdlog::logger > Log::s_ClientLogger;

@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Zhan">
       <UniqueIdentifier>{F630907C-E267-910D-8B54-7710776A0D0F}</UniqueIdentifier>
     </Filter>
     <Filter Include="Zhan\Event">
       <UniqueIdentifier>{C71230FF-B3CA-714C-1CD2-4AA808A90C3D}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Zhan\Layer">
+      <UniqueIdentifier>{428EA3FF-2E46-E54C-974D-BEA88324803D}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\Zhan.h" />
     <ClInclude Include="src\Zhan\Application.h">
       <Filter>Zhan</Filter>
@@ -19,22 +31,51 @@
     <ClInclude Include="src\Zhan\Entrypoint.h">
       <Filter>Zhan</Filter>
     </ClInclude>
+    <ClInclude Include="src\Zhan\Event\ApplicationEvent.h">
+      <Filter>Zhan\Event</Filter>
+    </ClInclude>
     <ClInclude Include="src\Zhan\Event\Event.h">
       <Filter>Zhan\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zhan\Event\KeyEvent.h">
+      <Filter>Zhan\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zhan\Event\MouseEvent.h">
+      <Filter>Zhan\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zhan\Event\WindowEvent.h">
+      <Filter>Zhan\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zhan\Layer\Layer.h">
+      <Filter>Zhan\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zhan\Layer\LayerStack.h">
+      <Filter>Zhan\Layer</Filter>
     </ClInclude>
     <ClInclude Include="src\Zhan\Log.h">
       <Filter>Zhan</Filter>
     </ClInclude>
+    <ClInclude Include="src\Zhan\Window.h">
+      <Filter>Zhan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\zhpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Zhan\Application.cpp">
       <Filter>Zhan</Filter>
     </ClCompile>
-    <ClCompile Include="src\Zhan\Event\Event.cpp">
-      <Filter>Zhan\Event</Filter>
+    <ClCompile Include="src\Zhan\Layer\Layer.cpp">
+      <Filter>Zhan\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Zhan\Layer\LayerStack.cpp">
+      <Filter>Zhan\Layer</Filter>
     </ClCompile>
     <ClCompile Include="src\Zhan\Log.cpp">
       <Filter>Zhan</Filter>
     </ClCompile>
+    <ClCompile Include="src\zhpch.cpp" />
   </ItemGroup>
 </Project>
