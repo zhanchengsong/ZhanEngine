@@ -34,6 +34,9 @@ namespace Zhan {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		// Init Glad
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		ZH_CORE_ASSERT(status, "Failed to initialize Glad");
 		// Set m_data to be carried by window 
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);

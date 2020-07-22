@@ -1,6 +1,7 @@
 #include "zhpch.h"
 #include "Application.h"
 #include "Log.h"
+#include "Glad/glad.h"
 #include "GLFW/glfw3.h"
 
 namespace Zhan {
