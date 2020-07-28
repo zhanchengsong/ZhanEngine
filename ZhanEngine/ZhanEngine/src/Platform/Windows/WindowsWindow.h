@@ -2,6 +2,7 @@
 #include <GLFW/glfw3.h>
 #include <Zhan/Window.h>
 #include <Zhan/Log.h>
+#include <Glad/glad.h>
 namespace Zhan {
 	class WindowsWindow : public Window
 	{

@@ -12,7 +12,9 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"]="ZhanEngine/vendor/GLFW/include"
+IncludeDir["Glad"]="ZhanEngine/vendor/Glad/include"
 -- include premake file from GLFW -- 
+include "ZhanEngine/vendor/Glad"
 include "ZhanEngine/vendor/GLFW"
 project "ZhanEngine"
 	location "ZhanEngine"
@@ -34,12 +36,14 @@ project "ZhanEngine"
 	includedirs {
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 
 	}
 
 	links {
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -50,7 +54,8 @@ project "ZhanEngine"
 		defines {
 			"ZH_PLATFORM_WINDOWS",
 			"ZH_BUILD_DLL",
-			"ZH_ENABLE_ASSERT"
+			"ZH_ENABLE_ASSERT",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands {
