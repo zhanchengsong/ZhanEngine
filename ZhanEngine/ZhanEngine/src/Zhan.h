@@ -6,4 +6,5 @@
 // Ane the application using Zhan should just include this header 
 // Entry point ================================
 #include "Zhan/Entrypoint.h"
-// --------------------------------------------
+// ------------------ImGUI Layer--------------------------
+#include "ImGui/ImGuiLayer.h"

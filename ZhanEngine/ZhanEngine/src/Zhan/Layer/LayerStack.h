@@ -5,7 +5,7 @@ namespace Zhan {
 	class ZHAN_API LayerStack
 	{
 	public:
-		LayerStack();
+		LayerStack() = default;
 		~LayerStack();
 
 		void PushLayer(Layer* layer);

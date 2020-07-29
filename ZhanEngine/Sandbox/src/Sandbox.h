@@ -3,6 +3,8 @@
 class Sandbox : public Zhan::Application
 {
 public:
-	Sandbox() {}
+	Sandbox() {
+		PushLayer(new Zhan::ImGuiLayer());
+	}
 	~Sandbox() {}
 };

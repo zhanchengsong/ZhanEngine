@@ -13,9 +13,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"]="ZhanEngine/vendor/GLFW/include"
 IncludeDir["Glad"]="ZhanEngine/vendor/Glad/include"
+IncludeDir["ImGui"]="ZhanEngine/vendor/imgui"
 -- include premake file from GLFW -- 
 include "ZhanEngine/vendor/Glad"
 include "ZhanEngine/vendor/GLFW"
+include "ZhanEngine/vendor/imgui"
 project "ZhanEngine"
 	location "ZhanEngine"
 	kind "SharedLib"
@@ -37,14 +39,16 @@ project "ZhanEngine"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 
 	}
 
 	links {
 		"GLFW",
 		"Glad",
-		"opengl32.lib"
+		"opengl32.lib",
+		"ImGui"
 	}
 
 	filter "system:windows" 

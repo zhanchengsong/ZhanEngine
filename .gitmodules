@@ -4,3 +4,9 @@
 [submodule "ZhanEngine/ZhanEngine/vendor/GLFW"]
 	path = ZhanEngine/ZhanEngine/vendor/GLFW
 	url = https://github.com/TheCherno/glfw.git
+[submodule "ZhanEngine/vendor/imgui"]
+	path = ZhanEngine/vendor/imgui
+	url = https://github.com/TheCherno/imgui
+[submodule ".\\ZhanEngine\\ZhanEngine\\vendor\\imgui"]
+	path = .\\ZhanEngine\\ZhanEngine\\vendor\\imgui
+	url = https://github.com/TheCherno/imgui
