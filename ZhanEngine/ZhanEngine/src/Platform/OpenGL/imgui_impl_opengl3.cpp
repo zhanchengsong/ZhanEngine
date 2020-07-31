@@ -48,15 +48,13 @@
 //  ES 2.0    100       "#version 100"
 //  ES 3.0    300       "#version 300 es"
 //----------------------------------------
-
+#include "zhpch.h"
 #if defined(_MSC_VER) && !defined(_CRT_SECURE_NO_WARNINGS)
 #define _CRT_SECURE_NO_WARNINGS
 #endif
 
-#include "zhpch.h"
 #include "imgui.h"
-#include "glad/glad.h"
-#include "ImGuiOpenGLRenderer.h"
+#include "imgui_impl_opengl3.h"
 #include <stdio.h>
 #if defined(_MSC_VER) && _MSC_VER <= 1500 // MSVC 2008 or earlier
 #include <stddef.h>     // intptr_t
@@ -87,8 +85,6 @@
 #include <GL/glew.h>
 #elif defined(IMGUI_IMPL_OPENGL_LOADER_GLAD)
 #include <glad/glad.h>
-#else
-#include IMGUI_IMPL_OPENGL_LOADER_CUSTOM
 #endif
 #endif
 

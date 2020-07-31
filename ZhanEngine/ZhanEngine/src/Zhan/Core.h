@@ -20,3 +20,11 @@
 #endif
 
 #define BIT(x) (1 << x)
+#define ZH_BIND_EVENT_FN(fn) std::bind(&fn,this,std::placeholders::_1)
+
+#if !defined(IMGUI_IMPL_OPENGL_LOADER_GL3W)     \
+ && !defined(IMGUI_IMPL_OPENGL_LOADER_GLEW)     \
+ && !defined(IMGUI_IMPL_OPENGL_LOADER_GLAD)     \
+ && !defined(IMGUI_IMPL_OPENGL_LOADER_CUSTOM)
+#define IMGUI_IMPL_OPENGL_LOADER_GLAD
+#endif

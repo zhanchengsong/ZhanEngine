@@ -31,7 +31,7 @@ namespace Zhan {
 			ZH_CORE_ASSERT(success, "Could not initialize GLFW");
 			s_GLFWInitialized = true;
 		}
-
+		glfwWindowHint(GLFW_SCALE_TO_MONITOR, GLFW_TRUE);
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
 		// Init Glad
