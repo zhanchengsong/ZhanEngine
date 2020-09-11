@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <functional>
 #include <sstream>
-
+#include <ostream>
 #include <string>
 #include <vector>
 #include <unordered_map>

@@ -14,6 +14,7 @@ IncludeDir = {}
 IncludeDir["GLFW"]="ZhanEngine/vendor/GLFW/include"
 IncludeDir["Glad"]="ZhanEngine/vendor/Glad/include"
 IncludeDir["ImGui"]="ZhanEngine/vendor/imgui"
+IncludeDir["glm"]="ZhanEngine/vendor/glm"
 -- include premake file from GLFW -- 
 include "ZhanEngine/vendor/Glad"
 include "ZhanEngine/vendor/GLFW"
@@ -32,7 +33,9 @@ project "ZhanEngine"
 
 	files {
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 	 
 	includedirs {
@@ -40,7 +43,8 @@ project "ZhanEngine"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 
 	}
 
@@ -95,7 +99,8 @@ project "Sandbox"
 	 
 	includedirs {
 		"ZhanEngine/vendor/spdlog/include",
-		"ZhanEngine/src"
+		"ZhanEngine/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links {

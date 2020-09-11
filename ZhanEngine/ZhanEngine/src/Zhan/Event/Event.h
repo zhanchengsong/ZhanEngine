@@ -7,7 +7,7 @@ namespace Zhan {
 		None = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
-		KeyPressed, KeyReleased,
+		KeyPressed, KeyReleased, KeyTyped,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MoseScrolled
 	};
 	// BIT(x) means a bit 1 at x'th position, we can later do a mask at the event 

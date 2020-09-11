@@ -90,7 +90,7 @@ namespace Zhan {
 		dispatcher.Dispatch<KeyPressedEvent>(ZH_BIND_EVENT_FN(ImGuiLayer::OnKeyPressedEvent));
 		dispatcher.Dispatch<KeyReleasedEvent>(ZH_BIND_EVENT_FN(ImGuiLayer::OnKeyReleasedEvent));
 		dispatcher.Dispatch<WindowResizeEvent>(ZH_BIND_EVENT_FN(ImGuiLayer::OnWindowResizedEvent));
-
+		dispatcher.Dispatch<KeyTypedEvent>(ZH_BIND_EVENT_FN(ImGuiLayer::OnKeyTypedEvent));
 	
 	}
 	// Process the event and set certain actions to be taken by imGui (GLFW -> Event -> ImGui actions)
@@ -122,11 +122,30 @@ namespace Zhan {
 		return false;
 	}
 	bool ImGuiLayer::OnKeyPressedEvent(KeyPressedEvent& e)
-	{
+	{	
+		ImGuiIO io = ImGui::GetIO();
+		io.KeysDown[e.GetKeyCode()] = true;
+
+		io.KeyCtrl = io.KeysDown[GLFW_KEY_LEFT_CONTROL] || io.KeysDown[GLFW_KEY_RIGHT_CONTROL];
+		io.KeyAlt = io.KeysDown[GLFW_KEY_LEFT_ALT] || io.KeysDown[GLFW_KEY_RIGHT_ALT];
+		io.KeyShift = io.KeysDown[GLFW_KEY_LEFT_SHIFT] || io.KeysDown[GLFW_KEY_RIGHT_SHIFT];
+		io.KeySuper = io.KeysDown[GLFW_KEY_LEFT_SUPER] || io.KeysDown[GLFW_KEY_RIGHT_SUPER];
+
 		return false;
 	}
 	bool ImGuiLayer::OnKeyReleasedEvent(KeyReleasedEvent& e)
 	{
+		ImGuiIO io = ImGui::GetIO();
+		io.KeysDown[e.GetKeyCode()] = false;
+		return false;
+	}
+	bool ImGuiLayer::OnKeyTypedEvent(KeyTypedEvent e)
+	{	
+		ImGuiIO io = ImGui::GetIO();
+		int keyCode = e.GetKeyCode();
+		if (keyCode > 0 && keyCode < 0x10000) {
+			io.AddInputCharacter((unsigned short)keyCode);
+		}
 		return false;
 	}
 	bool ImGuiLayer::OnWindowResizedEvent(WindowResizeEvent& e)
@@ -136,4 +155,6 @@ namespace Zhan {
 		io.DisplayFramebufferScale = ImVec2(1.0f, 1.0f);
 		return false;
 	}
+
+	
 }
