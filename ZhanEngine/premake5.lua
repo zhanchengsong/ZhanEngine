@@ -21,8 +21,11 @@ include "ZhanEngine/vendor/GLFW"
 include "ZhanEngine/vendor/imgui"
 project "ZhanEngine"
 	location "ZhanEngine"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++" 
+	cppdialect "C++17"
+	staticruntime "on"
+
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}" )
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
@@ -56,8 +59,6 @@ project "ZhanEngine"
 	}
 
 	filter "system:windows" 
-		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 		defines {
 			"ZH_PLATFORM_WINDOWS",
@@ -66,29 +67,27 @@ project "ZhanEngine"
 			"GLFW_INCLUDE_NONE"
 		}
 
-		postbuildcommands {
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-		}
-
 	filter "configurations:Debug"
 		defines "ZH_DEBUG"
-		buildoptions "/MDd"
-		symbols "On"
+		runtime "Debug"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "ZH_RELEASE"
-		buildoptions "/MD"
-		optimize "On"
+		runtime "Release"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "ZH_DIST"
-		buildoptions "/MD"
-		optimize "On"
+		runtime "Release"
+		optimize "on"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}" )
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
@@ -107,24 +106,24 @@ project "Sandbox"
 		"ZhanEngine"
 	}
 	filter "system:windows" 
-		cppdialect "C++17"
-		staticruntime "On"
+	
 		systemversion "latest"
 		defines {
 			"ZH_PLATFORM_WINDOWS"
 		}
+
 	filter "configurations:Debug"
 		defines "ZH_DEBUG"
-		buildoptions "/MDd"
-		symbols "On"
+		runtime "Debug"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "ZH_RELEASE"
-		buildoptions "/MD"
-		optimize "On"
+		runtime "Release"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "ZH_DIST"
-		buildoptions "/MD"
-		optimize "On"
+		runtime "Release"
+		optimize "on"
 		

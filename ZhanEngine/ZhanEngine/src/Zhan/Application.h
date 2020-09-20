@@ -3,6 +3,7 @@
 #include "Window.h"
 #include "Zhan/Event/WindowEvent.h"
 #include "Zhan/Layer/LayerStack.h"
+#include "Zhan/ImGui/ImGuiLayer.h"
 namespace Zhan {
 	class ZHAN_API Application
 	{
@@ -19,6 +20,7 @@ namespace Zhan {
 	private:
 		bool OnWindowClose(WindowCloseEvent& event);
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 		static Application* s_Instance;

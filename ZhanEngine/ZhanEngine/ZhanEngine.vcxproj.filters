@@ -4,14 +4,8 @@
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\ImGui">
-      <UniqueIdentifier>{170E22B3-8378-D629-CCB6-87CF3860B47E}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Platform\OpenGL">
-      <UniqueIdentifier>{35A49437-A105-7245-2A73-B8F796D3A804}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Platform\Windows">
       <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
@@ -21,6 +15,9 @@
     </Filter>
     <Filter Include="src\Zhan\Event">
       <UniqueIdentifier>{7EAF3636-6A7D-2A3C-5311-9B623F7E06A1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Zhan\ImGui">
+      <UniqueIdentifier>{57A37936-4371-6D3C-2C05-DE62187249A1}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Zhan\Layer">
       <UniqueIdentifier>{F92AAA36-E5F8-9D3C-CE8C-0E63BAF979A1}</UniqueIdentifier>
@@ -48,15 +45,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\ImGui\ImGuiLayer.h">
-      <Filter>src\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\OpenGL\imgui_impl_glfw.h">
-      <Filter>src\Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3.h">
-      <Filter>src\Platform\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>src\Platform\Windows</Filter>
     </ClInclude>
@@ -86,6 +74,9 @@
     </ClInclude>
     <ClInclude Include="src\Zhan\Event\WindowEvent.h">
       <Filter>src\Zhan\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zhan\ImGui\ImGuiLayer.h">
+      <Filter>src\Zhan\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="src\Zhan\Input.h">
       <Filter>src\Zhan</Filter>
@@ -1337,15 +1328,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\ImGui\ImGuiLayer.cpp">
-      <Filter>src\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\imgui_impl_glfw.cpp">
-      <Filter>src\Platform\OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\imgui_impl_opengl3.cpp">
-      <Filter>src\Platform\OpenGL</Filter>
-    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
@@ -1354,6 +1336,12 @@
     </ClCompile>
     <ClCompile Include="src\Zhan\Application.cpp">
       <Filter>src\Zhan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Zhan\ImGui\ImGuiBUild.cpp">
+      <Filter>src\Zhan\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Zhan\ImGui\ImGuiLayer.cpp">
+      <Filter>src\Zhan\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Zhan\Layer\Layer.cpp">
       <Filter>src\Zhan\Layer</Filter>
