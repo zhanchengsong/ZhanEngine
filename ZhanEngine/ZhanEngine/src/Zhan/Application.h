@@ -4,6 +4,7 @@
 #include "Zhan/Event/WindowEvent.h"
 #include "Zhan/Layer/LayerStack.h"
 #include "Zhan/ImGui/ImGuiLayer.h"
+#include "Renderer/Shader.h"
 namespace Zhan {
 	class ZHAN_API Application
 	{
@@ -24,6 +25,9 @@ namespace Zhan {
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 		static Application* s_Instance;
+
+		unsigned int m_VertexArray, m_VertedBuffer, m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 	};
 	// This method is going to be defined in the client app 
 	Application* CreateApplication();

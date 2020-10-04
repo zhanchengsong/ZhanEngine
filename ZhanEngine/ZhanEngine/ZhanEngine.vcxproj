@@ -140,7 +140,10 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Renderer\Shader.h" />
     <ClInclude Include="src\Zhan.h" />
     <ClInclude Include="src\Zhan\Application.h" />
     <ClInclude Include="src\Zhan\Core.h" />
@@ -569,8 +572,10 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\Renderer\Shader.cpp" />
     <ClCompile Include="src\Zhan\Application.cpp" />
     <ClCompile Include="src\Zhan\ImGui\ImGuiBUild.cpp" />
     <ClCompile Include="src\Zhan\ImGui\ImGuiLayer.cpp" />

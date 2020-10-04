@@ -4,6 +4,7 @@
 #include "Zhan/Event/MouseEvent.h"
 #include "Zhan/Event/WindowEvent.h"
 #include "Zhan/Event/KeyEvent.h"
+
 namespace Zhan {
 	static bool s_GLFWInitialized = false;
 
@@ -26,6 +27,8 @@ namespace Zhan {
 		m_Data.Title = props.Title;
 
 		ZH_CORE_INFO("Creating Window {0} {1} {2}", props.Title, props.Width, props.Height);
+
+		
 		if (!s_GLFWInitialized) {
 			int success = glfwInit();
 			ZH_CORE_ASSERT(success, "Could not initialize GLFW");
@@ -33,10 +36,10 @@ namespace Zhan {
 		}
 		glfwWindowHint(GLFW_SCALE_TO_MONITOR, GLFW_TRUE);
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
-		// Init Glad
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		ZH_CORE_ASSERT(status, "Failed to initialize Glad");
+		// Create OpenGLContext and init 
+		m_Context = new OpenGLContext(m_Window);
+		m_Context->Init();
+		
 		// Set m_data to be carried by window 
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
@@ -128,7 +131,7 @@ namespace Zhan {
 
 	void WindowsWindow::OnUpdate() {
 		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
+		m_Context->SwapBuffers();
 	}
 
 	void WindowsWindow::SetVSync(bool enabled) {

@@ -3,6 +3,8 @@
 #include <Zhan/Window.h>
 #include <Zhan/Log.h>
 #include <Glad/glad.h>
+#include "Renderer/GraphicsContext.h"
+#include "Platform/OpenGL/OpenGLContext.h"
 namespace Zhan {
 	class WindowsWindow : public Window
 	{
@@ -22,6 +24,7 @@ namespace Zhan {
 		virtual void Init(const WindowProps& props);
 		virtual void Shutdown();
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 		struct WindowData {
 			std::string Title;
 			unsigned int Width, Height;
